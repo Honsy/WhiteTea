@@ -4,8 +4,10 @@ import { connect } from '@tarojs/redux'
 
 import { add, minus, asyncAdd } from '../../actions/counter'
 
+import {api} from './../../api/api'
+
 import './index.scss'
-import { AtButton } from 'taro-ui'
+import { AtButton,AtGrid } from 'taro-ui'
 
 
 @connect(({ counter }) => ({
@@ -23,8 +25,25 @@ import { AtButton } from 'taro-ui'
 }))
 class Index extends Component {
 
-    config = {
+  config = {
     navigationBarTitleText: '首页'
+  }
+
+  constructor(){
+    this.state = {
+      typelist:[]
+    }
+  }
+
+  componentWillMount(){
+    var param={type:'product'}
+    api.getKeyValue(param).then(res=>{
+      this.setState({
+        typelist:res.data.data
+      })
+    }).catch(err=>{
+
+    })
   }
 
   componentWillReceiveProps (nextProps) {
@@ -38,13 +57,22 @@ class Index extends Component {
   componentDidHide () { }
 
   render () {
+    const {typelist} = this.state
     return (
       <View className='index'>
-        <Button className='add_btn' onClick={this.props.add}>+</Button>
-        <Button className='dec_btn' onClick={this.props.dec}>-</Button>
-        <Button className='dec_btn' onClick={this.props.asyncAdd}>async</Button>
-        <View><Text>{this.props.counter.num}</Text></View>
-        <View><Text>Hello, World</Text></View>
+        <View className='at-row at-row--wrap'>
+        {
+          typelist.map((item,index)=>{
+            return (
+                <View className='at-col at-col-6'>
+                  <View className='type-item'>{item.name}</View>
+                </View>
+            )
+          })
+        }
+        </View>
+        
+
         <AtButton>ssadasdas</AtButton>
       </View>
     )

@@ -26,6 +26,7 @@ class App extends Component {
     pages: [
       'pages/index/index',
       'pages/mine/mine',
+      'pages/shopcart/index',
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -40,6 +41,10 @@ class App extends Component {
         {
           pagePath:'pages/index/index',
           text:'首页'
+        },
+        {
+          pagePath:'pages/shopcart/index',
+          text:'购物车'
         },
         {
           pagePath:'pages/mine/mine',

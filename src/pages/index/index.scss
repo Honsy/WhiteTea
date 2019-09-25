@@ -1,4 +1,14 @@
 .index {
   flex-direction: column;
   width: 100%;
+  background: #f0f0f0;
+}
+
+.type-item{
+  text-align: center;
+  margin:5px;
+  display: block;
+  background: #fff;
+  height: 2rem;
+  line-height: 2rem;
 }
