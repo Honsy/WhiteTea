@@ -35,20 +35,27 @@ class App extends Component {
       navigationBarTextStyle: 'black'
     },
     tabBar:{
+      // position:'top',
       color:'#d8d8d8',
       selectedColor:'#de0000',
       list:[
         {
           pagePath:'pages/index/index',
-          text:'首页'
+          text:'首页',
+          iconPath:'./static/ic_tab_home.png',
+          selectedIconPath:'./static/ic_tab_home_select.png'
         },
         {
           pagePath:'pages/shopcart/index',
-          text:'购物车'
+          text:'购物车',
+          iconPath:'./static/ic_tab_shopcart.png',
+          selectedIconPath:'./static/ic_tab_shopcart_select.png'
         },
         {
           pagePath:'pages/mine/mine',
-          text:'我的'
+          text:'我的',
+          iconPath:'./static/ic_tab_mine.png',
+          selectedIconPath:'./static/ic_tab_mine_select.png'
         }
       ]
     }

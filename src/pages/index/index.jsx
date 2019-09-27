@@ -4,10 +4,14 @@ import { connect } from '@tarojs/redux'
 
 import { add, minus, asyncAdd } from '../../actions/counter'
 
-import {api} from './../../api/api'
+import { userAction } from '../../actions/useraction'
 
+import {api} from './../../api/api'
 import './index.scss'
 import { AtButton,AtGrid } from 'taro-ui'
+
+// 静态资源引用
+import ShopCartPng from './../../static/ic_shopcart.png'
 
 
 @connect(({ counter }) => ({
@@ -31,19 +35,38 @@ class Index extends Component {
 
   constructor(){
     this.state = {
-      typelist:[]
+      queryproduct:{
+
+      },
+      querytype:{
+        type:'product'
+      },
+      typelist:[],
+      productlist:[]
     }
   }
 
   componentWillMount(){
-    var param={type:'product'}
-    api.getKeyValue(param).then(res=>{
+    const {queryproduct,querytype} = this.state
+    // 查询类别
+    api.getKeyValue(querytype).then(res=>{
       this.setState({
         typelist:res.data.data
       })
     }).catch(err=>{
 
     })
+    // 查询商品
+    api.getProduct(queryproduct).then(res=>{
+      this.setState({
+        productlist:res.data.data
+      })
+    }).catch(err=>{
+
+    })
+
+    console.log(this)
+    this.props.dispatch(userAction.getUserInfo())
   }
 
   componentWillReceiveProps (nextProps) {
@@ -56,8 +79,14 @@ class Index extends Component {
 
   componentDidHide () { }
 
+  // 加入购物车
+  addShopCart = (item)=>{
+
+  }
+
+
   render () {
-    const {typelist} = this.state
+    const {typelist,productlist} = this.state
     return (
       <View className='index'>
         <View className='at-row at-row--wrap'>
@@ -71,9 +100,28 @@ class Index extends Component {
           })
         }
         </View>
-        
-
-        <AtButton>ssadasdas</AtButton>
+        <View className='productlist at-row at-row--wrap'>
+          {
+            productlist.map((item,index)=>{
+              return (
+                  <View className='at-col at-col-6'>
+                    <View className='product'>
+                      <View className='image'>
+                        <Image  src={item.image} alt=""/>
+                      </View>
+                      <Text>{item.name}</Text>
+                      <View className='bottom'>
+                        <Text className='left'>价格：{item.price}</Text>
+                        <View className='right'>
+                          <Image onClick={(item)=>this.addShopCart(item)} src={ShopCartPng} />
+                        </View>
+                      </View>
+                    </View>
+                  </View>
+              )
+            })
+          }
+        </View>
       </View>
     )
   }

@@ -1,5 +1,5 @@
 import Taro from '@tarojs/taro'
-
+import {UCookie} from './auth'
 // Taro不支持axios 调整
 
 
@@ -14,11 +14,16 @@ var service = function request(params) {
   var oparams = params.params
   var method = params.method
 
+  var header = {}
+  if (UCookie.getToken()) {
+    header['X-Token'] = UCookie.getToken()
+  }
 
   return Taro.request({
       url:config.baseURl+url,
       data:oparams,
       method:method,
+      header:header
   })
 }
 
