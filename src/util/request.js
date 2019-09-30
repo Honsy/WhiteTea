@@ -8,7 +8,6 @@ const config = {
 }
 
 var service = function request(params) {
-  console.log(params)
   var url = params.url
   var data = params.data
   var oparams = params.params

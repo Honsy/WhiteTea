@@ -81,7 +81,17 @@ class Index extends Component {
 
   // 加入购物车
   addShopCart = (item)=>{
+    console.log(item)
+    var params = {
+      productid:item.id,
+      num:1
+    }
 
+    api.addShopCart(params).then(res=>{
+
+    }).catch(err=>{
+
+    })
   }
 
 
@@ -113,7 +123,7 @@ class Index extends Component {
                       <View className='bottom'>
                         <Text className='left'>价格：{item.price}</Text>
                         <View className='right'>
-                          <Image onClick={(item)=>this.addShopCart(item)} src={ShopCartPng} />
+                          <Image onClick={()=>this.addShopCart(item)} src={ShopCartPng} />
                         </View>
                       </View>
                     </View>

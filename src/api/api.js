@@ -3,6 +3,8 @@ import request from './../util/request'
 export const api = {
     getKeyValue,
     getProduct,
+    addShopCart,
+    getShopCart,
     login
 }
 
@@ -31,3 +33,22 @@ function getProduct(params){
         params
     })
 }
+
+// 添加购物车
+function addShopCart(params){
+    return request({
+      url: 'api/shopcart',
+      method: 'post',
+      params
+    })
+}
+  
+// 查询购物车
+function getShopCart(params){
+    return request({
+      url: 'api/shopcart',
+      method: 'get',
+      params
+    })
+}
+  
