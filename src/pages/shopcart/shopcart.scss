@@ -1,0 +1,32 @@
+page{
+    height: 100%
+}
+
+.sc{
+    background: #f0f0f0;
+    height: 100%;
+    overflow: hidden;
+}
+.sc-item{
+    height: 5rem;
+    margin-top: 0.5rem;
+    background: #fff;
+    display: flex;
+}
+
+.sc-item .left{
+    width: 25%;
+}
+
+.sc-item .right{
+    width: 75%;
+    padding: 0.2rem 0;
+    position: relative;
+
+}
+
+.jiajian{
+    position: absolute;
+    right: 0.3rem;
+    bottom: 0.3rem;
+}

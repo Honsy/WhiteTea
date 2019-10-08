@@ -1,8 +1,6 @@
 import Taro from '@tarojs/taro'
 import {UCookie} from './auth'
 // Taro不支持axios 调整
-
-
 const config = {
   baseURl:'http://127.0.0.1:3030/'
 }
