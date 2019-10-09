@@ -6,6 +6,7 @@ page{
     background: #f0f0f0;
     height: 100%;
     overflow: hidden;
+    position: relative;
 }
 .sc-item{
     height: 5rem;
@@ -15,14 +16,75 @@ page{
 }
 
 .sc-item .left{
-    width: 25%;
+    width: 30%;
+    position: relative;
+    padding: 0.8rem 0 0 0.8rem;
+}
+
+.sc-item .left .select{
+    width: 48px;
+    height: 48px;
+    vertical-align: middle;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.sc-item .left .proimg{
+    width: 3.2rem;
+    height: 3.2rem;
+    position: relative;
+    vertical-align: middle;
+
 }
 
 .sc-item .right{
-    width: 75%;
+    width: 70%;
     padding: 0.2rem 0;
     position: relative;
 
+}
+
+.sc-footer{
+    position: absolute;
+    height: 2.5rem;
+    width: 100%;
+    display: flex;
+    bottom: 0;
+    background: #fff;
+}
+
+.sc-f-allselect{
+    width: 20%;
+    padding: 0.6rem 0 0 0.3rem;
+}
+
+.sc-f-allselect image{
+    width: 48px;
+    height: 48px;
+    vertical-align: top;
+    margin-right: 0.2rem;
+}
+
+.sc-f-allselect text{
+    line-height: 48px;
+    height: 48px;
+    display: inline-block;
+}
+
+.sc-footer view:nth-child(2){
+    width: 50%;
+}
+
+
+.sc-footer view:last-child{
+    width: 30%;
+}
+
+
+.sc-js-btn{
+    border-radius: 0;
+    background: #de0000;
+    color:#fff;
 }
 
 .jiajian{

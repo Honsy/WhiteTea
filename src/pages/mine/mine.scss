@@ -1,0 +1,38 @@
+page{
+    height: 100%
+}
+
+.mine{
+    background: #f0f0f0;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.m-info{
+    height: 4.6rem;
+    background: #fff;
+}
+
+.m-info image{
+    width: 3.8rem;
+    height:3.8rem;
+    vertical-align: middle;
+    margin-left: 1rem;
+}
+
+.m-order{
+    margin-top: 0.2rem;
+    display: flex;
+    width: 100%;
+    background: #fff;
+}
+.m-order view{
+    width: 25%;
+}
+.m-o-img{
+    width: 2.4rem;
+    height: 2.4rem;
+    margin: 1.2rem auto;
+    display: block;
+
+}
