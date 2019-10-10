@@ -79,6 +79,14 @@ class Index extends Component {
 
   componentDidHide () { }
 
+  // 进入商品详情
+  goDetail = (item) =>{
+    // 跳转到目的页面，打开新页面
+    Taro.navigateTo({
+      url: '/pages/productdetail/productdetail?id='+item.id
+    })
+
+  }
   // 加入购物车
   addShopCart = (item)=>{
     console.log(item)
@@ -114,7 +122,7 @@ class Index extends Component {
           {
             productlist.map((item,index)=>{
               return (
-                  <View className='at-col at-col-6'>
+                  <View className='at-col at-col-6' onClick={()=>this.goDetail(item)}>
                     <View className='product'>
                       <View className='image'>
                         <Image  src={item.image} alt=""/>

@@ -27,6 +27,7 @@ class App extends Component {
       'pages/index/index',
       'pages/mine/mine',
       'pages/shopcart/index',
+      'pages/productdetail/productdetail',
     ],
     window: {
       backgroundTextStyle: 'light',
