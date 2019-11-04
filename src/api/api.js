@@ -5,6 +5,7 @@ export const api = {
     getProduct,
     addShopCart,
     getShopCart,
+    getOneProduct,
     login
 }
 
@@ -28,9 +29,16 @@ function getKeyValue(params) {
 // 查询商品
 function getProduct(params){
     return request({
-        url: 'api/product',
+        url: 'api/product/'+params.currentPage+'/'+params.pageNumber,
         method: 'GET',
-        params
+    })
+}
+
+// 查询单件商品
+function getOneProduct(params){
+    return request({
+      url: 'api/product/'+params.id,
+      method: 'get'
     })
 }
 

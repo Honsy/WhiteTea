@@ -1,8 +1,8 @@
 import { Component } from '@tarojs/taro'
 import { View, Button, Text } from '@tarojs/components'
-import {api} from './../../api/api'
+import {api} from '../../api/api'
 import './shopcart.scss'
-import ChangeNum from './../../component/ChangeNum'
+import ChangeNum from '../../component/ChangeNum'
 import { AtButton } from 'taro-ui'
 
 import icselect from './../../static/ic_sc_select.png'

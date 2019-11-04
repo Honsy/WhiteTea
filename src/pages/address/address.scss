@@ -1,0 +1,80 @@
+@import './../../app.scss';
+
+page{
+    position: fixed;
+    height: 100%;
+}
+
+.ad-footer{
+    position: absolute; 
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+}
+
+.add-btn{
+    background: $yellow-color;
+    border: none;
+    height: 100%;
+
+}
+
+.ad-top-btn{
+    background: $lightgray-color;
+    padding: .2rem;
+}
+
+.ad-top-btn image{
+    vertical-align: top;
+    margin-right: .1rem;
+}
+
+.ad-form-h{
+
+}
+
+.ad-pca{
+    display: flex;
+    position: relative;
+    margin-left: 32rpx;
+    padding: 24rpx 0;
+}
+
+
+.ad-pca::after{
+    content: '';
+    position: absolute;
+    -webkit-transform-origin: center;
+    -ms-transform-origin: center;
+    transform-origin: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    pointer-events: none;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    border: 0 solid #d6e4ef;
+    -webkit-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    transform: scale(0.5);
+    border-bottom-width: 1PX;
+    
+}
+
+.ad-pca .title{
+    margin-right: 16rpx;
+    width: 172rpx;
+    font-size: 32rpx;
+    line-height: 1.5;
+    vertical-align: middle;
+    text-align: left;
+
+}
+
+.ad-pca .content{
+    color: #333;
+    font-size: 32rpx;
+    height: 44.8rpx;
+    line-height: 1.5;
+}

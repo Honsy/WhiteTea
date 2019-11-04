@@ -8,9 +8,11 @@ import Tab from './pages/tab'
 
 
 import configStore from './store'
-
 import './app.scss'
 import 'taro-ui/dist/style/index.scss'
+
+// vConsole
+// import 'vconsole'
 
 // 如果需要在 h5 环境中开启 React Devtools
 // 取消以下注释：
@@ -26,8 +28,10 @@ class App extends Component {
     pages: [
       'pages/index/index',
       'pages/mine/mine',
-      'pages/shopcart/index',
-      'pages/productdetail/productdetail',
+      'pages/shopcart/shopcart',
+      'pages/productdetail/product-detail',
+      'pages/address/address',
+      'pages/address/add-new-address'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -47,7 +51,7 @@ class App extends Component {
           selectedIconPath:'./static/ic_tab_home_select.png'
         },
         {
-          pagePath:'pages/shopcart/index',
+          pagePath:'pages/shopcart/shopcart',
           text:'购物车',
           iconPath:'./static/ic_tab_shopcart.png',
           selectedIconPath:'./static/ic_tab_shopcart_select.png'

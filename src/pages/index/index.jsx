@@ -36,7 +36,8 @@ class Index extends Component {
   constructor(){
     this.state = {
       queryproduct:{
-
+        currentPage:1,
+        pageNumber:10
       },
       querytype:{
         type:'product'
@@ -59,13 +60,11 @@ class Index extends Component {
     // 查询商品
     api.getProduct(queryproduct).then(res=>{
       this.setState({
-        productlist:res.data.data
+        productlist:res.data.data.list
       })
     }).catch(err=>{
 
     })
-
-    console.log(this)
     this.props.dispatch(userAction.getUserInfo())
   }
 

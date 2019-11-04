@@ -1,3 +1,18 @@
+
+// 全局变量
+$theme-color: #de0000 !global;
+$gray-color: #b8b8b8 !global;
+$yellow-color:#ffc90e !global;
+$lightgray-color:	#F5F5F5 !global;
+
+.fl-l{
+    float: left;
+}
+
+.fl-r{
+    float: right;
+}
+
 .fs12{
     font-size: 28px;
 }
@@ -11,9 +26,18 @@
 }
 
 .gray-c{
-    color: #b8b8b8;
+    color: $gray-color;
 }
 
 .db{
     display: block;
+}
+
+.br-0{
+    border-radius: 0;
+}
+
+.wx-icon{
+    width: 1rem;
+    height: 1rem;
 }

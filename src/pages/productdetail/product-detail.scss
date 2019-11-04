@@ -1,0 +1,37 @@
+@import "./../../app.scss";
+
+page{
+    height: 100%;
+    position: fixed;
+}
+.pd-page{
+
+}
+
+.pd-swiper{
+    height: 15rem;
+}
+.pd-f-btn
+.pd-info{
+    margin: 0.2rem 0.4rem;
+}
+
+.pd-footer{
+    position: absolute;
+    bottom: 0;
+    height: 2.5rem;
+    width: 100%;
+}
+
+.pd-f-btn{
+    color:#fff;
+    background:$theme-color;
+    width: 50%;
+    line-height: 2.5rem;
+    display: inline-block;
+    height: 100%;
+}
+
+.pd-f-btn.gary{
+    background: $yellow-color;
+}
