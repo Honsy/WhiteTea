@@ -4,8 +4,8 @@ import area from './area'
 import './pca.scss'
 
 export class PCA extends Taro.Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
 
         this.state = {
             provinces:[],
@@ -20,12 +20,11 @@ export class PCA extends Taro.Component{
         }
     }
 
-    componentWillMount = () =>{
+    componentWillMount = (props) =>{
         const {provinceValue,cityValue,areaValue} = this.state
         var provinces = Object.keys(area)
         var citys = Object.keys(area[provinces[provinceValue]])
         var areas = area[provinces[provinceValue]][citys[cityValue]]
-    
         this.setState({
             provinces:provinces,
             citys:citys,
@@ -70,8 +69,13 @@ export class PCA extends Taro.Component{
     }
 
     onChange = (e) =>{
+        const { provinces,citys,areas } = this.state
+        var value = provinces[e.detail.value[0]]+citys[e.detail.value[1]]+areas[e.detail.value[2]]
         this.setState({
-            dataValue:e.detail.value
+            dataValue:e.detail.value,
+            selectValue:value
+        },()=>{
+            this.props.callback(value)
         })
     }   
 
@@ -93,20 +97,6 @@ export class PCA extends Taro.Component{
                         </View>
                     </Picker>
                 </View>
-                {/* <View>
-                    <Picker mode='selector' range={this.state.citys} onChange={this.onChange}>
-                        <View className='picker'>
-                        当前选择：{this.state.selectCity}
-                        </View>
-                    </Picker>
-                </View>
-                <View>
-                    <Picker mode='selector' range={this.state.areas} onChange={this.onChange}>
-                        <View className='picker'>
-                        当前选择：{this.state.selectArea}
-                        </View>
-                    </Picker>
-                </View> */}
             </View>
         )
     }

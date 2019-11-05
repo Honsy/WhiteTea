@@ -1,6 +1,7 @@
 import Taro,{Component} from '@tarojs/taro'
 import {View} from '@tarojs/components'
 import {AtButton} from 'taro-ui'
+import { api } from './../../api/api'
 import './address.scss'
 import {wxGetAddress,wxAuthorize,WXAuthorizeType} from './../../util/wxutil'
 import icwx from './../../static/ic_wx.png'
@@ -28,6 +29,16 @@ export default class Address extends Component{
             })
         }).catch(err=>{
 
+        })
+
+        this.loadData()
+    }
+
+    loadData = () =>{
+        api.queryAddress().then(res=>{
+
+        }).catch(err=>{
+            
         })
     }
 

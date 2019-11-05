@@ -6,6 +6,10 @@ export const api = {
     addShopCart,
     getShopCart,
     getOneProduct,
+    addAddress,
+    updateAddress,
+    deleteAddress,
+    queryAddress,
     login
 }
 
@@ -59,4 +63,36 @@ function getShopCart(params){
       params
     })
 }
-  
+
+// 增加收货地址
+function addAddress(params){
+    return request({
+      url: 'api/address',
+      method: 'post',
+      params
+    })
+}
+// 修改收货地址
+function updateAddress(params){
+    return request({
+      url: 'api/address',
+      method: 'put',
+      params
+    })
+}
+// 删除收货地址
+function deleteAddress(params){
+    return request({
+      url: 'api/address',
+      method: 'delete',
+      params
+    })
+}
+// 查询收货地址
+function queryAddress(params){
+    return request({
+      url: 'api/address',
+      method: 'get',
+      params
+    })
+}
