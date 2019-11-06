@@ -29,9 +29,10 @@ class App extends Component {
       'pages/index/index',
       'pages/mine/mine',
       'pages/shopcart/shopcart',
-      'pages/productdetail/product-detail',
+      'pages/productdetail/productdetail',
       'pages/address/address',
-      'pages/address/add-new-address'
+      'pages/address/addnewaddress',
+      'pages/order/order'
     ],
     window: {
       backgroundTextStyle: 'light',

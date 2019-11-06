@@ -2,6 +2,8 @@ import Taro, { Component } from '@tarojs/taro'
 import { View, Button, Text,Swiper, SwiperItem } from '@tarojs/components'
 import { api } from '../../api/api'
 import './../../app.scss'
+import './productdetail.scss'
+
 
 export default class ProductDetail extends Component{
     config = {

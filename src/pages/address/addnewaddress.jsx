@@ -1,9 +1,9 @@
 import {Component} from '@tarojs/taro'
 import {View} from '@tarojs/components'
-import {PCA} from './../../component/pca/index'
+import {PCA} from '../../component/pca/index'
 import {AtInput,AtButton} from 'taro-ui'
 import './address.scss'
-import {api} from './../../api/api'
+import {api} from '../../api/api'
 
 export default class AddAddress extends Component{
     config = {
